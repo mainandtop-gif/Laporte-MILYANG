@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>라포르테 밀양 — Laporté 확정분양형 민간임대아파트</title>
+<meta name="description" content="경남 밀양시 내이동 확정분양형 민간임대아파트 · 총 536세대 · 청약통장 불필요 · HUG 전세보증보험 100%">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ===== TOKENS ===== */
+:root{
+  --navy:    #1D2F5C;
+  --navy-d:  #111E3C;
+  --navy-l:  #2E4880;
+  --gold:    #B8912A;
+  --gold-l:  #D4AB47;
+  --beige:   #F2EDE4;
+  --beige-d: #E0D5C0;
+  --gray:    #F5F6F8;
+  --white:   #FFFFFF;
+  --text:    #222222;
+  --text-s:  #555555;
+  --text-xs: #888888;
+  --red:     #C0392B;
+  --radius:  4px;
+  --trans:   .3s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+ul,ol{list-style:none}
+.sec{padding:96px 0}
+.container{max-width:1160px;margin:0 auto;padding:0 32px}
+.sec-eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px;display:block}
+.sec-title{font-size:clamp(24px,3.8vw,38px);font-weight:700;line-height:1.3;margin-bottom:16px;color:var(--navy)}
+.sec-desc{font-size:14px;color:var(--text-s);line-height:2;margin-bottom:48px}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* ===== HEADER ===== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  background:rgba(29,47,92,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);transition:var(--trans);
+}
+.header.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.25)}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;padding:0 40px;max-width:1400px;margin:0 auto;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{
+  width:40px;height:40px;background:var(--gold);
+  clip-path:polygon(0 0,90% 0,100% 10%,100% 100%,0 100%);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.logo-icon svg{width:20px;height:20px;fill:var(--navy-d)}
+.logo-text{display:flex;flex-direction:column;line-height:1.2}
+.logo-en{font-size:16px;font-weight:800;letter-spacing:3px;color:#fff}
+.logo-ko{font-size:9px;letter-spacing:1px;color:rgba(255,255,255,.55);font-weight:400;white-space:nowrap}
+.logo-badge{font-size:9px;background:var(--gold);color:var(--navy-d);padding:1px 6px;border-radius:2px;letter-spacing:1px;font-weight:700;margin-right:4px}
+@media(max-width:400px){.logo-en{font-size:14px}.logo-badge{display:none}}
+.gnav{display:flex;gap:28px;align-items:center}
+.gnav a{font-size:12px;font-weight:500;color:rgba(255,255,255,.6);letter-spacing:.5px;position:relative;padding-bottom:2px;transition:color .2s}
+.gnav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .25s}
+.gnav a:hover{color:#fff}.gnav a:hover::after{width:100%}
+.gnav-cta{background:var(--gold)!important;color:var(--navy-d)!important;padding:9px 20px;border-radius:var(--radius);font-weight:700!important}
+.gnav-cta:hover{background:var(--gold-l)!important}.gnav-cta::after{display:none!important}
+.mobile-menu-btn{display:none;flex-direction:column;gap:5px;padding:4px}
+.mobile-menu-btn span{width:22px;height:2px;background:#fff;border-radius:2px}
+
+/* ===== MOBILE NAV ===== */
+.mobile-nav{
+  position:fixed;top:0;right:-100%;width:280px;height:100vh;
+  background:var(--navy-d);z-index:910;padding:80px 32px 40px;
+  box-shadow:-4px 0 30px rgba(0,0,0,.3);transition:right .35s ease;
+}
+.mobile-nav.open{right:0}
+.mobile-nav-close{position:absolute;top:20px;right:20px;font-size:22px;color:rgba(255,255,255,.5);cursor:pointer}
+.mobile-nav a{display:block;padding:15px 0;font-size:14px;font-weight:500;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.07)}
+.mobile-nav a:last-child{border-bottom:none;margin-top:16px;background:var(--gold);color:var(--navy-d)!important;text-align:center;padding:14px;border-radius:var(--radius);font-weight:700}
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:905;opacity:0;pointer-events:none;transition:opacity .3s}
+.nav-overlay.show{opacity:1;pointer-events:auto}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;height:100vh;min-height:640px;max-height:960px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:var(--navy-d);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('assets/images/hero.jpg') center/cover no-repeat;
+  opacity:.7;animation:heroZoom 14s ease-in-out infinite alternate;
+}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1.0)}}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(29,47,92,.55) 0%,rgba(0,0,0,.05) 45%,rgba(0,0,0,.68) 100%);
+}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 24px;color:#fff}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.1);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.2);border-radius:24px;
+  padding:10px 28px;font-size:14px;letter-spacing:2px;color:rgba(255,255,255,.95);
+  font-weight:600;margin-bottom:32px;
+  opacity:0;animation:fadeUp .8s .3s forwards;
+}
+.hero-badge-dot{width:7px;height:7px;background:var(--gold-l);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-title{
+  font-size:clamp(34px,6vw,76px);font-weight:900;line-height:1.1;
+  letter-spacing:-1px;margin-bottom:10px;
+  opacity:0;animation:fadeUp .8s .6s forwards;
+}
+.hero-title em{display:block;font-style:normal;color:var(--gold-l);font-size:.45em;font-weight:300;letter-spacing:8px;margin-bottom:6px}
+.hero-sub{
+  font-size:clamp(13px,1.6vw,16px);color:rgba(255,255,255,.5);
+  letter-spacing:2px;margin-bottom:48px;
+  opacity:0;animation:fadeUp .8s .8s forwards;
+}
+.hero-tags{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:52px;
+  opacity:0;animation:fadeUp .8s 1.0s forwards;
+}
+.hero-tag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:20px;font-size:12px;color:rgba(255,255,255,.8);letter-spacing:.5px}
+.hero-cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp .8s 1.2s forwards}
+.hero-btn{padding:15px 36px;border-radius:var(--radius);font-size:14px;font-weight:700;letter-spacing:.5px;transition:all var(--trans);cursor:pointer}
+.hero-btn-primary{background:var(--gold);color:var(--navy-d);border:2px solid var(--gold)}
+.hero-btn-primary:hover{background:var(--gold-l);transform:translateY(-2px)}
+.hero-btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+.hero-btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.hero-scroll{position:absolute;bottom:40px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:fadeUp .8s 1.5s forwards}
+.hero-scroll-line{width:1px;height:56px;background:linear-gradient(to bottom,rgba(255,255,255,.6),transparent);animation:scrollAnim 2.4s ease-in-out infinite}
+@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top}49%{transform:scaleY(1);transform-origin:top}50%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-scroll-txt{font-size:9px;letter-spacing:4px;color:rgba(255,255,255,.35);text-transform:uppercase}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== NOTICE BAR ===== */
+.notice-bar{background:var(--navy);color:#fff;padding:16px 32px;text-align:center;font-size:13px;letter-spacing:.5px;line-height:2}
+.notice-bar strong{font-weight:700;color:var(--gold-l)}
+
+/* ===== FORM ===== */
+.form-section{background:var(--beige);padding:80px 0}
+.form-inner{max-width:760px;margin:0 auto;padding:0 32px}
+.form-header{text-align:center;margin-bottom:44px}
+.form-header .sec-eyebrow{justify-content:center;display:flex;gap:8px;align-items:center}
+.form-header .sec-eyebrow::before,.form-header .sec-eyebrow::after{content:'';flex:1;height:1px;background:rgba(184,145,42,.25)}
+.form-box{background:#fff;border-radius:8px;padding:48px 52px;box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:12px;font-weight:600;color:var(--text);letter-spacing:.5px}
+.form-label span{color:var(--red);margin-left:2px}
+.form-input,.form-select,.form-textarea{
+  width:100%;padding:12px 16px;border:1.5px solid #DDD5C5;border-radius:var(--radius);
+  font-family:inherit;font-size:14px;color:var(--text);background:#fff;
+  transition:border-color var(--trans);outline:none;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--navy)}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-textarea{resize:vertical;min-height:88px;line-height:1.7}
+/* 개인정보 */
+.privacy-wrap{grid-column:1/-1;margin-top:8px}
+.privacy-check-row{display:flex;align-items:flex-start;gap:10px;cursor:pointer;user-select:none}
+.privacy-check-row input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:1px;accent-color:var(--navy);cursor:pointer}
+.privacy-check-label{font-size:13px;color:var(--text);line-height:1.6}
+.privacy-check-label strong{color:var(--navy)}
+.privacy-toggle{background:none;border:none;color:var(--navy);font-size:12px;font-weight:600;cursor:pointer;padding:0;margin-left:6px;text-decoration:underline;font-family:inherit;white-space:nowrap}
+.privacy-box{display:none;margin-top:12px;padding:16px 18px;background:#F8F5EF;border:1px solid #DDD5C5;border-radius:var(--radius);font-size:11px;color:var(--text-s);line-height:2}
+.privacy-box.open{display:block}
+.privacy-box table{width:100%;border-collapse:collapse;margin-top:8px}
+.privacy-box th,.privacy-box td{padding:7px 10px;border:1px solid #DDD5C5;font-size:11px;text-align:left;vertical-align:top}
+.privacy-box th{background:#EDE8DF;font-weight:700;color:var(--text);white-space:nowrap;width:110px}
+.privacy-error{display:none;font-size:11px;color:var(--red);margin-top:6px;font-weight:600}
+.form-submit-wrap{text-align:center;margin-top:28px}
+.form-submit{
+  width:100%;max-width:320px;padding:16px;
+  background:var(--navy);color:#fff;border:none;border-radius:var(--radius);
+  font-size:15px;font-weight:700;letter-spacing:1px;cursor:pointer;
+  transition:all var(--trans);
+}
+.form-submit:hover{background:var(--navy-l);transform:translateY(-2px);box-shadow:0 6px 20px rgba(29,47,92,.3)}
+.form-notice{text-align:center;margin-top:14px;font-size:11px;color:var(--text-xs);line-height:1.8}
+.form-success{display:none;text-align:center;padding:40px 20px}
+.form-success-icon{font-size:52px;margin-bottom:16px}
+.form-success h3{font-size:22px;font-weight:700;margin-bottom:12px;color:var(--navy)}
+.form-success p{font-size:14px;color:var(--text-s);line-height:1.8}
+
+/* ===== OVERVIEW ===== */
+.overview-section{background:#fff}
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.overview-img-wrap{position:relative}
+.overview-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius)}
+.overview-img-accent{position:absolute;bottom:-12px;right:-12px;width:70%;height:70%;border:2px solid rgba(184,145,42,.2);border-radius:var(--radius);pointer-events:none;z-index:-1}
+.overview-label{position:absolute;top:18px;left:18px;background:var(--navy);color:#fff;padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:2px;border-radius:2px}
+.info-table{width:100%;border-collapse:collapse}
+.info-table tr{border-bottom:1px solid #EDE8DF}
+.info-table tr:last-child{border-bottom:none}
+.info-table th{padding:14px 0;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:1px;width:110px;vertical-align:top;text-align:left;white-space:nowrap}
+.info-table td{padding:14px 0 14px 16px;font-size:13px;color:var(--text);line-height:1.8}
+.info-table td strong{color:var(--navy)}
+
+/* ===== UNIT COMP ===== */
+.unit-comp-section{background:var(--navy-d);color:#fff}
+.unit-comp-section .sec-title{color:#fff}
+.unit-comp-section .sec-eyebrow{color:var(--gold-l)}
+.unit-comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.05);margin-top:44px}
+.comp-item{background:#1a2845;padding:36px 22px;text-align:center;transition:background var(--trans)}
+.comp-item:hover{background:#223060}
+.comp-type{font-size:12px;font-weight:700;color:var(--gold-l);letter-spacing:2px;margin-bottom:12px}
+.comp-sqm{font-size:clamp(26px,3.5vw,44px);font-weight:900;line-height:1}
+.comp-sqm span{font-size:.45em;font-weight:400;color:rgba(255,255,255,.4)}
+.comp-divider{width:28px;height:1px;background:rgba(255,255,255,.1);margin:14px auto}
+.comp-supply{font-size:11px;color:rgba(255,255,255,.38);line-height:1.9}
+.comp-count{font-size:clamp(28px,3.5vw,46px);font-weight:900;color:#fff;line-height:1;margin-top:8px}
+.comp-count span{font-size:.45em;font-weight:400;color:rgba(255,255,255,.35)}
+.comp-total-row{grid-column:1/-1;background:var(--gold);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.comp-total-label{font-size:12px;letter-spacing:3px;color:rgba(29,47,92,.7);text-transform:uppercase;font-weight:700}
+.comp-total-val{font-size:clamp(20px,3vw,30px);font-weight:900;color:var(--navy-d)}
+.comp-total-val span{font-size:.5em;font-weight:400}
+
+/* ===== SITE PLAN ===== */
+.site-plan-section{background:var(--beige)}
+.site-plan-img{width:100%;border-radius:var(--radius);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+
+/* ===== FLOOR PLANS ===== */
+.plan-section{background:#fff}
+.plan-tabs{display:flex;gap:0;border-bottom:2px solid #EDE8DF;margin-bottom:48px;overflow-x:auto}
+.plan-tab{padding:14px 28px;font-size:13px;font-weight:600;cursor:pointer;color:var(--text-xs);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;letter-spacing:.5px;background:none;border-left:none;border-right:none;border-top:none;font-family:inherit}
+.plan-tab.active{color:var(--navy);border-bottom-color:var(--navy)}
+.plan-tab:hover{color:var(--navy)}
+.plan-panel{display:none}
+.plan-panel.active{display:block}
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.plan-img-box{background:var(--gray);border-radius:var(--radius);overflow:hidden;border:1px solid #EDE8DF}
+.plan-img-box img{width:100%;display:block;object-fit:contain;padding:12px}
+.plan-type-badge{display:inline-block;background:var(--navy);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:2px;letter-spacing:2px;margin-bottom:14px}
+.plan-type-name{font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--navy);line-height:1;margin-bottom:4px}
+.plan-type-eng{font-size:12px;letter-spacing:4px;color:var(--text-xs);margin-bottom:32px}
+.plan-spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#EDE8DF;border-radius:var(--radius);overflow:hidden;margin-bottom:28px}
+.spec-box{background:#fff;padding:20px 18px}
+.spec-box-label{font-size:10px;letter-spacing:2px;color:var(--navy);text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.spec-box-val{font-size:17px;font-weight:800;color:var(--text)}
+.spec-box-val span{font-size:12px;font-weight:400;color:var(--text-xs)}
+.plan-supply-info{background:var(--beige);border-radius:var(--radius);padding:18px 22px;font-size:13px;color:var(--text-s);line-height:2}
+.plan-supply-info strong{color:var(--navy);font-weight:700}
+
+/* ===== COMMUNITY ===== */
+.comm-section{background:var(--gray)}
+.comm-tabs{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+.comm-tab{padding:10px 22px;border-radius:24px;font-size:13px;font-weight:600;cursor:pointer;background:#fff;color:var(--text-s);border:1.5px solid #DDD5C5;transition:all .2s;font-family:inherit}
+.comm-tab.active,.comm-tab:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.comm-panel{display:none}
+.comm-panel.active{display:block}
+.comm-img{width:100%;border-radius:var(--radius);box-shadow:0 8px 32px rgba(0,0,0,.1);margin-bottom:28px}
+.comm-desc{font-size:14px;color:var(--text-s);line-height:2}
+.comm-features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.comm-feat{background:#fff;border-radius:var(--radius);padding:22px 20px;text-align:center;border:1px solid #EDE8DF}
+.comm-feat-icon{font-size:28px;margin-bottom:10px}
+.comm-feat-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.comm-feat-desc{font-size:11px;color:var(--text-xs);line-height:1.8}
+
+/* ===== SUPER PLAN (특장점) ===== */
+.plan8-section{background:var(--navy-d);color:#fff;overflow:hidden;position:relative}
+.plan8-section::before{content:'LAPORTÉ';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:clamp(60px,12vw,160px);font-weight:900;color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none}
+.plan8-section .sec-title{color:#fff}
+.plan8-section .sec-eyebrow{color:var(--gold-l)}
+.plan8-header{display:flex;align-items:center;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+.plan8-logo{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0}
+.plan8-logo-top{font-size:10px;letter-spacing:4px;color:rgba(255,255,255,.4);text-transform:uppercase}
+.plan8-logo-text{font-size:clamp(28px,4vw,48px);font-weight:900;color:var(--gold-l);letter-spacing:2px}
+.plan8-logo-sub{font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.3)}
+.plan8-intro{font-size:16px;color:rgba(255,255,255,.6);line-height:1.8}
+.plan8-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.plan8-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);padding:28px 24px;transition:all var(--trans);position:relative;overflow:hidden}
+.plan8-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height var(--trans)}
+.plan8-card:hover{background:rgba(255,255,255,.07);border-color:rgba(184,145,42,.3)}
+.plan8-card:hover::before{height:100%}
+.plan8-num{font-size:11px;letter-spacing:3px;color:var(--gold-l);font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.plan8-num-line{flex:1;height:1px;background:rgba(255,255,255,.06)}
+.plan8-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:10px}
+.plan8-desc{font-size:12px;color:rgba(255,255,255,.42);line-height:1.9}
+
+/* ===== 상품비교 ===== */
+.compare-section{background:#fff}
+.compare-tabs{display:flex;gap:0;border-bottom:2px solid #EDE8DF;margin-bottom:44px}
+.compare-tab{padding:13px 28px;font-size:13px;font-weight:600;cursor:pointer;color:var(--text-xs);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;background:none;border-left:none;border-right:none;border-top:none;font-family:inherit}
+.compare-tab.active{color:var(--navy);border-bottom-color:var(--navy)}
+.compare-panel{display:none}
+.compare-panel.active{display:block}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px}
+.compare-table th{background:var(--navy);color:#fff;padding:14px 16px;font-weight:600;letter-spacing:.5px;text-align:center;font-size:12px}
+.compare-table th:first-child{background:var(--navy-d);width:160px;text-align:left}
+.compare-table td{padding:13px 16px;border-bottom:1px solid #EDE8DF;line-height:1.7;vertical-align:top}
+.compare-table td:first-child{font-weight:700;color:var(--navy);background:#F8F5EF;white-space:nowrap;font-size:12px}
+.compare-table td:last-child{color:var(--navy);font-weight:500}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table .good{color:#27AE60;font-weight:700}
+.compare-table .bad{color:#C0392B}
+.compare-badge-row td:last-child{background:rgba(29,47,92,.04)}
+
+/* ===== HUG ===== */
+.hug-section{background:var(--beige)}
+.hug-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.hug-diagram{background:#fff;border-radius:8px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.hug-diagram-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:24px;text-align:center}
+.hug-flow{display:flex;flex-direction:column;gap:0;align-items:center}
+.hug-party{background:var(--navy);color:#fff;border-radius:50px;padding:10px 24px;font-size:13px;font-weight:700;text-align:center;width:160px}
+.hug-party.gold{background:var(--gold);color:var(--navy-d)}
+.hug-arrow{font-size:11px;color:var(--text-xs);margin:6px 0;text-align:center;line-height:1.6}
+.hug-center{background:var(--gray);border:2px solid var(--navy);border-radius:8px;padding:14px 20px;margin:8px 0;text-align:center;width:100%}
+.hug-center strong{font-size:15px;font-weight:900;color:var(--navy);display:block}
+.hug-center span{font-size:11px;color:var(--text-xs)}
+.hug-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:12px}
+.hug-table th{background:var(--navy);color:#fff;padding:11px 12px;font-weight:600;text-align:center;font-size:11px;letter-spacing:.3px}
+.hug-table th:first-child{text-align:left;width:100px}
+.hug-table td{padding:11px 12px;border-bottom:1px solid #EDE8DF;vertical-align:top;line-height:1.7;text-align:center}
+.hug-table td:first-child{font-weight:700;color:var(--navy);text-align:left;background:#F8F5EF;font-size:11px}
+.hug-table tr:last-child td{border-bottom:none}
+.hug-note{font-size:11px;color:var(--text-xs);line-height:2;margin-top:20px;padding:14px 16px;background:#fff;border-radius:var(--radius);border-left:3px solid var(--gold)}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--navy-d);color:rgba(255,255,255,.4);padding:48px 0 120px}
+.footer-inner{max-width:1160px;margin:0 auto;padding:0 32px}
+.footer-top{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer-logo-box{width:34px;height:34px;background:var(--gold);clip-path:polygon(0 0,90% 0,100% 10%,100% 100%,0 100%);display:flex;align-items:center;justify-content:center}
+.footer-logo-box svg{width:16px;height:16px;fill:var(--navy-d)}
+.footer-logo-en{font-size:14px;font-weight:800;letter-spacing:3px;color:rgba(255,255,255,.7)}
+.footer-desc{font-size:11px;line-height:1.9;max-width:360px}
+.footer-contact div{font-size:12px;margin-bottom:5px}
+.footer-contact strong{color:rgba(255,255,255,.65);font-size:14px}
+.footer-disclaimer{font-size:10px;line-height:1.9;margin-bottom:14px;color:rgba(255,255,255,.2)}
+.footer-bottom{font-size:11px;letter-spacing:.3px}
+
+/* ===== MOBILE BOTTOM CTA ===== */
+.mobile-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;grid-template-columns:1fr 1fr;height:56px}
+.mobile-cta-btn{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:700;letter-spacing:.5px;cursor:pointer;border:none;text-decoration:none;font-family:inherit}
+.mobile-cta-btn.sms{background:#1a2845;color:#fff}
+.mobile-cta-btn.tel{background:var(--gold);color:var(--navy-d)}
+.mobile-cta-btn svg{width:18px;height:18px;fill:currentColor}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:960px){
+  .gnav{display:none}.mobile-menu-btn{display:flex}
+  .overview-grid,.hug-grid,.plan-grid{grid-template-columns:1fr}
+  .unit-comp-grid{grid-template-columns:repeat(2,1fr)}
+  .plan8-grid{grid-template-columns:repeat(2,1fr)}
+  .comm-features{grid-template-columns:1fr 1fr}
+  .sec{padding:68px 0}
+  .form-box{padding:32px 28px}
+  .form-grid{grid-template-columns:1fr}
+  .overview-img-accent{display:none}
+}
+@media(max-width:600px){
+  .container{padding:0 20px}
+  .header-inner{padding:0 20px}
+  .hero-title{font-size:clamp(28px,9vw,46px)}
+  .unit-comp-grid{grid-template-columns:1fr 1fr}
+  .plan8-grid{grid-template-columns:1fr}
+  .comm-features{grid-template-columns:1fr}
+  .compare-tabs{overflow-x:auto}
+  .sec{padding:52px 0}
+  .form-box{padding:28px 20px}
+  .footer{padding-bottom:80px}
+}
+@media(max-width:768px){
+  .mobile-cta-bar{display:grid}
+  .footer{padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L4 8v14h5v-7h6v7h5V8L12 2z"/></svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-en">Laporté</span>
+        <span class="logo-ko"><span class="logo-badge">밀양</span>라포르테 확정분양형 민간임대</span>
+      </div>
+    </a>
+    <nav class="gnav">
+      <a href="#overview">사업개요</a>
+      <a href="#siteplan">단지배치도</a>
+      <a href="#plans">평면도</a>
+      <a href="#community">커뮤니티</a>
+      <a href="#features">특장점</a>
+      <a href="#compare">상품비교</a>
+      <a href="#register" class="gnav-cta">관심등록</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+  <a href="#overview" class="mnl">사업개요</a>
+  <a href="#siteplan" class="mnl">단지배치도</a>
+  <a href="#plans" class="mnl">단위세대 평면도</a>
+  <a href="#community" class="mnl">커뮤니티시설</a>
+  <a href="#features" class="mnl">특장점</a>
+  <a href="#compare" class="mnl">상품비교</a>
+  <a href="#hug" class="mnl">HUG 전세보증</a>
+  <a href="#register" class="mnl">관심등록 하기</a>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>확정분양형 민간임대아파트 · 밀양시 최초</div>
+    <h1 class="hero-title">밀양 라포르테<em>Laporté</em></h1>
+    <p class="hero-sub">경남 밀양시 내이동 · 10년 후 확정분양전환</p>
+    <div class="hero-tags">
+      <span class="hero-tag">총 536세대</span>
+      <span class="hero-tag">청약통장 불필요</span>
+      <span class="hero-tag">HUG 임대보증 100%</span>
+      <span class="hero-tag">세금 ZERO</span>
+      <span class="hero-tag">중도금 무이자</span>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#register" class="hero-btn hero-btn-primary">관심등록 하기</a>
+      <a href="#overview" class="hero-btn hero-btn-outline">사업개요 보기</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div><span class="hero-scroll-txt">Scroll</span></div>
+</section>
+
+<!-- NOTICE BAR -->
+<div class="notice-bar">
+  <strong>밀양 라포르테 홍보관 운영 안내</strong><br>
+  방문 상담 예약 및 문의 <strong>055-353-8883</strong><br>
+  평일·주말 10:00 ~ 18:00
+</div>
+
+<!-- INTEREST FORM -->
+<section class="form-section" id="register">
+  <div class="form-inner">
+    <div class="form-header fade-in">
+      <span class="sec-eyebrow">INTEREST REGISTRATION</span>
+      <h2 class="sec-title" style="color:var(--navy)">관심 등록</h2>
+      <p style="font-size:14px;color:var(--text-s);text-align:center">관심 등록 시 사전 혜택 및 최신 분양 정보를 우선 안내해 드립니다.</p>
+    </div>
+    <div class="form-box fade-in" id="formBox">
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="from_name">성함 <span>*</span></label>
+            <input class="form-input" type="text" id="from_name" placeholder="홍길동" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">연락처 <span>*</span></label>
+            <input class="form-input" type="tel" id="phone" placeholder="010-0000-0000" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="unit_type">관심 타입</label>
+            <select class="form-select" id="unit_type">
+              <option value="미선택">타입 선택</option>
+              <option>59㎡ (전용 59.92㎡)</option>
+              <option>84㎡ A TYPE (전용 86.60㎡)</option>
+              <option>84㎡ B TYPE (전용 86.76㎡)</option>
+              <option>110㎡ (전용 110.02㎡)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="region">거주지역</label>
+            <select class="form-select" id="region">
+              <option value="미선택">지역 선택</option>
+              <option>경남 밀양시</option>
+              <option>경남 창원시</option>
+              <option>경남 기타</option>
+              <option>부산광역시</option>
+              <option>대구광역시</option>
+              <option>기타</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label class="form-label" for="message">문의사항</label>
+            <textarea class="form-textarea" id="message" placeholder="궁금한 점을 자유롭게 입력해 주세요."></textarea>
+          </div>
+          <!-- 개인정보 동의 -->
+          <div class="privacy-wrap">
+            <label class="privacy-check-row">
+              <input type="checkbox" id="privacyAgree">
+              <span class="privacy-check-label">
+                <strong>[필수]</strong> 개인정보 수집·이용에 동의합니다.
+                <button type="button" class="privacy-toggle" id="privacyToggle">내용 보기 ▾</button>
+              </span>
+            </label>
+            <p class="privacy-error" id="privacyError">개인정보 수집·이용에 동의해 주세요.</p>
+            <div class="privacy-box" id="privacyBox">
+              <strong>개인정보 수집·이용 안내</strong>
+              <table>
+                <tr><th>수집 항목</th><td>성명, 연락처, 관심 타입, 거주지역, 문의사항</td></tr>
+                <tr><th>수집 목적</th><td>밀양 라포르테 분양 상담 및 안내 서비스 제공</td></tr>
+                <tr><th>보유 기간</th><td>수집일로부터 1년 (목적 달성 또는 동의 철회 시 즉시 파기)</td></tr>
+                <tr><th>제3자 제공</th><td>제공하지 않음</td></tr>
+              </table>
+              <p style="margin-top:10px;color:#999">※ 위 동의를 거부할 권리가 있으나, 거부 시 상담 서비스 제공이 어렵습니다.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-submit-wrap">
+          <button type="submit" class="form-submit" id="submitBtn">관심 등록 신청하기</button>
+        </div>
+        <p class="form-notice">수집된 개인정보는 상담 안내 목적으로만 사용되며, 관련 법령에 따라 보호됩니다.</p>
+      </form>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="form-success-icon">✅</div>
+      <h3>관심 등록이 완료되었습니다!</h3>
+      <p>빠른 시간 내에 담당자가 연락드리겠습니다.<br>추가 문의사항은 <strong>055-353-8883</strong>으로 연락 주세요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 사업개요 -->
+<section class="sec overview-section" id="overview">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-img-wrap fade-in">
+        <img src="assets/images/overview.jpg" alt="밀양 라포르테 조감도" class="overview-img">
+        <div class="overview-img-accent"></div>
+        <span class="overview-label">MILYANG LAPORTÉ</span>
+      </div>
+      <div class="fade-in">
+        <span class="sec-eyebrow">BUSINESS OVERVIEW</span>
+        <h2 class="sec-title">사업 개요</h2>
+        <table class="info-table">
+          <tbody>
+            <tr><th>사업명</th><td><strong>밀양 라포르테</strong></td></tr>
+            <tr><th>위치</th><td>경남 밀양시 내이동 218-5번지 일원</td></tr>
+            <tr><th>사업시행</th><td>㈜아라D&C</td></tr>
+            <tr><th>시공예정</th><td>㈜건영</td></tr>
+            <tr><th>사업종류</th><td>확정분양형 장기일반민간임대주택<br><small style="color:#999">밀양시 최초 확정분양형 민간임대</small></td></tr>
+            <tr><th>공급규모</th><td><strong>총 536세대</strong> · 6개동 (지하2층, 지상29층)</td></tr>
+            <tr><th>공급타입</th><td>59㎡ / 84㎡A · B / 110㎡</td></tr>
+            <tr><th>용도지역</th><td>제2종일반주거지역</td></tr>
+            <tr><th>대지면적</th><td>27,895.00㎡ (8,443.42평)</td></tr>
+            <tr><th>용적률</th><td>240.24% · 건폐율 17.12%</td></tr>
+            <tr><th>부대시설</th><td>관리사무소, 경로당, 어린이집, 작은도서관,<br>피트니스, 실내골프, 주민공동시설 등</td></tr>
+            <tr><th>주차대수</th><td>707대</td></tr>
+            <tr><th>임대기간</th><td><strong>10년</strong> (2년 주기 갱신, 분양전환 선택)</td></tr>
+            <tr><th>예상입주</th><td><strong>2029년 5월 예정</strong></td></tr>
+            <tr><th>청약통장</th><td><strong style="color:#27ae60">불필요</strong> — 만 19세 이상 누구나 신청 가능</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 세대 구성 -->
+<section class="sec unit-comp-section" id="units">
+  <div class="container">
+    <span class="sec-eyebrow">UNIT COMPOSITION</span>
+    <h2 class="sec-title">세대 구성</h2>
+    <div class="unit-comp-grid">
+      <div class="comp-item fade-in">
+        <div class="comp-type">TYPE 01</div>
+        <div class="comp-sqm">59<span>㎡</span></div>
+        <div class="comp-divider"></div>
+        <div class="comp-supply">전용 59.92㎡ · 공급 79.75㎡<br>계약면적 116.48㎡ (35.24평)</div>
+        <div class="comp-count">192<span>세대</span></div>
+      </div>
+      <div class="comp-item fade-in">
+        <div class="comp-type">TYPE 02 · A</div>
+        <div class="comp-sqm">84<span>㎡</span></div>
+        <div class="comp-divider"></div>
+        <div class="comp-supply">전용 86.60㎡ · 공급 110.97㎡<br>계약면적 162.84㎡ (49.26평)</div>
+        <div class="comp-count">93<span>세대</span></div>
+      </div>
+      <div class="comp-item fade-in">
+        <div class="comp-type">TYPE 03 · B</div>
+        <div class="comp-sqm">84<span>㎡</span></div>
+        <div class="comp-divider"></div>
+        <div class="comp-supply">전용 86.76㎡ · 공급 113.74㎡<br>계약면적 165.71㎡ (50.13평)</div>
+        <div class="comp-count">112<span>세대</span></div>
+      </div>
+      <div class="comp-item fade-in">
+        <div class="comp-type">TYPE 04</div>
+        <div class="comp-sqm">110<span>㎡</span></div>
+        <div class="comp-divider"></div>
+        <div class="comp-supply">전용 110.02㎡ · 공급 138.47㎡<br>계약면적 205.92㎡ (62.29평)</div>
+        <div class="comp-count">139<span>세대</span></div>
+      </div>
+      <div class="comp-total-row">
+        <span class="comp-total-label">TOTAL UNITS</span>
+        <span class="comp-total-val">536<span>세대</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 단지배치도 -->
+<section class="sec site-plan-section" id="siteplan">
+  <div class="container">
+    <span class="sec-eyebrow">SITE PLAN</span>
+    <h2 class="sec-title fade-in">단지 배치도</h2>
+    <p class="sec-desc fade-in">6개동 536세대 · 101동~106동 · 지하2층~지상29층</p>
+    <div class="fade-in">
+      <img src="assets/images/site-plan.jpg" alt="밀양 라포르테 단지배치도" class="site-plan-img">
+    </div>
+  </div>
+</section>
+
+<!-- 단위세대 평면도 -->
+<section class="sec plan-section" id="plans">
+  <div class="container">
+    <span class="sec-eyebrow">UNIT FLOOR PLAN</span>
+    <h2 class="sec-title fade-in">단위세대 평면도</h2>
+    <div class="plan-tabs" role="tablist">
+      <button class="plan-tab active" data-tab="59">59㎡ TYPE</button>
+      <button class="plan-tab" data-tab="84a">84㎡ A TYPE</button>
+      <button class="plan-tab" data-tab="84b">84㎡ B TYPE</button>
+      <button class="plan-tab" data-tab="110">110㎡ TYPE</button>
+    </div>
+    <!-- 59㎡ -->
+    <div class="plan-panel active" id="plan-59">
+      <div class="plan-grid">
+        <div class="plan-img-box fade-in">
+          <img src="assets/images/plan-59.jpg" alt="59㎡ 평면도" loading="lazy">
+        </div>
+        <div class="fade-in">
+          <span class="plan-type-badge">TYPE 01</span>
+          <div class="plan-type-name">59㎡</div>
+          <div class="plan-type-eng">35.24 PYEONG (계약)</div>
+          <div class="plan-spec-grid">
+            <div class="spec-box"><div class="spec-box-label">전용면적</div><div class="spec-box-val">59.92<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">공용면적</div><div class="spec-box-val">19.83<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">공급면적</div><div class="spec-box-val">79.75<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">계약면적</div><div class="spec-box-val">116.48<span>㎡</span></div></div>
+          </div>
+          <div class="plan-supply-info">전체 536세대 중 <strong>192세대</strong> 공급 (주력 타입)</div>
+        </div>
+      </div>
+    </div>
+    <!-- 84A -->
+    <div class="plan-panel" id="plan-84a">
+      <div class="plan-grid">
+        <div class="plan-img-box fade-in"><img src="assets/images/plan-84a.jpg" alt="84㎡A 평면도" loading="lazy"></div>
+        <div class="fade-in">
+          <span class="plan-type-badge">TYPE 02 · A</span>
+          <div class="plan-type-name">84㎡ A</div>
+          <div class="plan-type-eng">49.26 PYEONG (계약)</div>
+          <div class="plan-spec-grid">
+            <div class="spec-box"><div class="spec-box-label">전용면적</div><div class="spec-box-val">86.60<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">공용면적</div><div class="spec-box-val">26.37<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">공급면적</div><div class="spec-box-val">110.97<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">계약면적</div><div class="spec-box-val">162.84<span>㎡</span></div></div>
+          </div>
+          <div class="plan-supply-info">전체 536세대 중 <strong>93세대</strong> 공급</div>
+        </div>
+      </div>
+    </div>
+    <!-- 84B -->
+    <div class="plan-panel" id="plan-84b">
+      <div class="plan-grid">
+        <div class="plan-img-box fade-in"><img src="assets/images/plan-84b.jpg" alt="84㎡B 평면도" loading="lazy"></div>
+        <div class="fade-in">
+          <span class="plan-type-badge">TYPE 03 · B</span>
+          <div class="plan-type-name">84㎡ B</div>
+          <div class="plan-type-eng">50.13 PYEONG (계약)</div>
+          <div class="plan-spec-grid">
+            <div class="spec-box"><div class="spec-box-label">전용면적</div><div class="spec-box-val">86.76<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">공용면적</div><div class="spec-box-val">28.99<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">공급면적</div><div class="spec-box-val">113.74<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">계약면적</div><div class="spec-box-val">165.71<span>㎡</span></div></div>
+          </div>
+          <div class="plan-supply-info">전체 536세대 중 <strong>112세대</strong> 공급</div>
+        </div>
+      </div>
+    </div>
+    <!-- 110 -->
+    <div class="plan-panel" id="plan-110">
+      <div class="plan-grid">
+        <div class="plan-img-box fade-in"><img src="assets/images/plan-110.jpg" alt="110㎡ 평면도" loading="lazy"></div>
+        <div class="fade-in">
+          <span class="plan-type-badge">TYPE 04</span>
+          <div class="plan-type-name">110㎡</div>
+          <div class="plan-type-eng">62.29 PYEONG (계약)</div>
+          <div class="plan-spec-grid">
+            <div class="spec-box"><div class="spec-box-label">전용면적</div><div class="spec-box-val">110.02<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">공용면적</div><div class="spec-box-val">28.47<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">공급면적</div><div class="spec-box-val">138.47<span>㎡</span></div></div>
+            <div class="spec-box"><div class="spec-box-label">계약면적</div><div class="spec-box-val">205.92<span>㎡</span></div></div>
+          </div>
+          <div class="plan-supply-info">전체 536세대 중 <strong>139세대</strong> 공급</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 커뮤니티 -->
+<section class="sec comm-section" id="community">
+  <div class="container">
+    <span class="sec-eyebrow">COMMUNITY FACILITIES</span>
+    <h2 class="sec-title fade-in">커뮤니티 시설</h2>
+    <p class="sec-desc fade-in">다양한 커뮤니티 공간을 가까이 모으고 세대원들의 소통을 늘리는 공간</p>
+    <div class="comm-tabs">
+      <button class="comm-tab active" data-comm="fitness">피트니스 · 실내골프</button>
+      <button class="comm-tab" data-comm="library">작은도서관 · 스터디룸</button>
+      <button class="comm-tab" data-comm="care">경로당 · 어린이집</button>
+      <button class="comm-tab" data-comm="park">물놀이터 · 조경</button>
+    </div>
+    <div class="comm-panel active" id="comm-fitness">
+      <img src="assets/images/comm-fitness.jpg" alt="피트니스 · 실내골프 연습장" class="comm-img">
+      <div class="comm-features">
+        <div class="comm-feat"><div class="comm-feat-icon">⛳</div><div class="comm-feat-name">실내골프 연습장</div><div class="comm-feat-desc">151.48㎡ (45.82평)<br>커뮤니티동 2F</div></div>
+        <div class="comm-feat"><div class="comm-feat-icon">🏋️</div><div class="comm-feat-name">피트니스</div><div class="comm-feat-desc">198.93㎡ (60.17평)<br>커뮤니티동 2F</div></div>
+        <div class="comm-feat"><div class="comm-feat-icon">🧘</div><div class="comm-feat-name">GX룸</div><div class="comm-feat-desc">다목적 운동 공간<br>커뮤니티동 2F</div></div>
+      </div>
+    </div>
+    <div class="comm-panel" id="comm-library">
+      <img src="assets/images/comm-library.jpg" alt="작은도서관 · 스터디룸" class="comm-img">
+      <div class="comm-features">
+        <div class="comm-feat"><div class="comm-feat-icon">📚</div><div class="comm-feat-name">작은도서관</div><div class="comm-feat-desc">114.31㎡ (34.58평)<br>102동 B1F</div></div>
+        <div class="comm-feat"><div class="comm-feat-icon">📖</div><div class="comm-feat-name">스터디룸</div><div class="comm-feat-desc">55.66㎡ (16.84평)<br>102동 B1F</div></div>
+        <div class="comm-feat"><div class="comm-feat-icon">💻</div><div class="comm-feat-name">확장스터디룸</div><div class="comm-feat-desc">독립형 소그룹 학습공간<br>102동 B1F</div></div>
+      </div>
+    </div>
+    <div class="comm-panel" id="comm-care">
+      <img src="assets/images/comm-care.jpg" alt="경로당 · 어린이집" class="comm-img">
+      <div class="comm-features">
+        <div class="comm-feat"><div class="comm-feat-icon">👴</div><div class="comm-feat-name">경로당</div><div class="comm-feat-desc">154.47㎡ (46.72평)<br>커뮤니티동 1F</div></div>
+        <div class="comm-feat"><div class="comm-feat-icon">👶</div><div class="comm-feat-name">어린이집</div><div class="comm-feat-desc">279.62㎡ (84.58평)<br>커뮤니티동 1F</div></div>
+        <div class="comm-feat"><div class="comm-feat-icon">🏠</div><div class="comm-feat-name">관리사무소</div><div class="comm-feat-desc">입주민 지원 편의시설<br>105동 1F</div></div>
+      </div>
+    </div>
+    <div class="comm-panel" id="comm-park">
+      <img src="assets/images/comm-park.jpg" alt="물놀이터 · 단지 조경" class="comm-img">
+      <div class="comm-features">
+        <div class="comm-feat"><div class="comm-feat-icon">💦</div><div class="comm-feat-name">물놀이터</div><div class="comm-feat-desc">단지 내 수경시설<br>사계절 특화 조경</div></div>
+        <div class="comm-feat"><div class="comm-feat-icon">🌳</div><div class="comm-feat-name">자연친화 조경</div><div class="comm-feat-desc">전세대 남향 배치<br>쾌적한 단지 환경</div></div>
+        <div class="comm-feat"><div class="comm-feat-icon">🛝</div><div class="comm-feat-name">어린이놀이터</div><div class="comm-feat-desc">안전한 놀이 공간<br>다양한 놀이시설</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 특장점 SUPER PLAN 8 -->
+<section class="sec plan8-section" id="features">
+  <div class="container">
+    <div class="plan8-header fade-in">
+      <div class="plan8-logo">
+        <span class="plan8-logo-top">SUPER</span>
+        <span class="plan8-logo-text">PLAN 8</span>
+        <span class="plan8-logo-sub">밀양 라포르테</span>
+      </div>
+      <div>
+        <span class="sec-eyebrow">WHY LAPORTÉ</span>
+        <h2 class="sec-title" style="color:#fff;margin-bottom:12px">라포르테 밀양의<br>8가지 특장점</h2>
+        <p class="plan8-intro">꿈꾸던 내집마련의 실현 · 혜택가득, 10년의 가치를 누릴</p>
+      </div>
+    </div>
+    <div class="plan8-grid">
+      <div class="plan8-card fade-in">
+        <div class="plan8-num">PLAN 01<span class="plan8-num-line"></span></div>
+        <div class="plan8-title">10년 살아보고 분양전환</div>
+        <div class="plan8-desc">10년간 내집처럼 걱정없이 누리고, 10년 후 확정분양가로 분양전환 선택. 입주 시 전세금액 그대로 소유권 이전.</div>
+      </div>
+      <div class="plan8-card fade-in">
+        <div class="plan8-num">PLAN 02<span class="plan8-num-line"></span></div>
+        <div class="plan8-title">조건없는 내집마련 기회</div>
+        <div class="plan8-desc">만 19세 이상 대한민국 성인 누구나 청약 통장 없이 자유롭게 청약 가능. 다주택자·법인·외국인 복수계약 가능.</div>
+      </div>
+      <div class="plan8-card fade-in">
+        <div class="plan8-num">PLAN 03<span class="plan8-num-line"></span></div>
+        <div class="plan8-title">HUG 임대보증 100%</div>
+        <div class="plan8-desc">주택도시보증공사 보증 가입을 통해 100% 안전하게 보장되는 전세보증금. 임차인의 보증금 안전 확보.</div>
+      </div>
+      <div class="plan8-card fade-in">
+        <div class="plan8-num">PLAN 04<span class="plan8-num-line"></span></div>
+        <div class="plan8-title">각종 세금부담 ZERO</div>
+        <div class="plan8-desc">취득세, 재산세, 양도세, 종부세 등 직간접세 부담없이 누리는 주거라이프. 건강보험료 동결.</div>
+      </div>
+      <div class="plan8-card fade-in">
+        <div class="plan8-num">PLAN 05<span class="plan8-num-line"></span></div>
+        <div class="plan8-title">규제 없는 투자 혜택</div>
+        <div class="plan8-desc">주택수 미포함, 전매, 양도 제한 無. 제한없이 자유롭게 누리는 실속 혜택. 지위권 양도 시 시세차익 가능.</div>
+      </div>
+      <div class="plan8-card fade-in">
+        <div class="plan8-num">PLAN 06<span class="plan8-num-line"></span></div>
+        <div class="plan8-title">2년 주기 계약 갱신</div>
+        <div class="plan8-desc">10년 의무 임대기간 없이 2년마다 갱신여부 선택가능한 안정적인 시스템. 계약 해지 시 분양전환 보증금 반환.</div>
+      </div>
+      <div class="plan8-card fade-in">
+        <div class="plan8-num">PLAN 07<span class="plan8-num-line"></span></div>
+        <div class="plan8-title">전세대 남향위주 배치</div>
+        <div class="plan8-desc">전세대 남향배치, 쾌적한 일조권과 탁트인 조망권이 만드는 일상의 품격. 6개동 536세대 체계적 배치.</div>
+      </div>
+      <div class="plan8-card fade-in">
+        <div class="plan8-num">PLAN 08<span class="plan8-num-line"></span></div>
+        <div class="plan8-title">다양한 커뮤니티 시설</div>
+        <div class="plan8-desc">도서관부터 피트니스, 실버클럽까지 다양한 라이프에 발맞추는 맞춤 공간. 실내골프 연습장·물놀이터 등.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 상품비교 -->
+<section class="sec compare-section" id="compare">
+  <div class="container">
+    <span class="sec-eyebrow">PRODUCT COMPARISON</span>
+    <h2 class="sec-title fade-in">상품 비교</h2>
+    <div class="compare-tabs" role="tablist">
+      <button class="compare-tab active" data-cmp="local">지역주택조합과 비교</button>
+      <button class="compare-tab" data-cmp="general">일반분양 아파트와 비교</button>
+    </div>
+    <!-- 지역주택조합 비교 -->
+    <div class="compare-panel active fade-in" id="cmp-local">
+      <table class="compare-table">
+        <thead>
+          <tr><th>구 분</th><th>지역주택조합</th><th>밀양 라포르테</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>사업주체</td><td>주택조합 및 조합원</td><td class="good">시행사</td></tr>
+          <tr><td>사업 리스크</td><td class="bad">조합원 부담</td><td class="good">시행사 부담</td></tr>
+          <tr><td>추가분담금</td><td class="bad">추가분담금 발생 위험</td><td class="good">없음</td></tr>
+          <tr><td>토지확보</td><td class="bad">조합원 분담금으로 확보</td><td class="good">시행사 자기자본으로 토지확보</td></tr>
+          <tr><td>자격조건</td><td class="bad">주택소유, 거주기간, 세대주 등 제한 多</td><td class="good">만 19세 이상, 법인·외국인 가능, 복수계약 가능</td></tr>
+          <tr><td>권리행사</td><td>사업승인 이후 조합원 지위 변경 가능</td><td class="good">가입시부터 권리양도 가능 · 상시매매 가능</td></tr>
+          <tr><td>토지확보 리스크</td><td class="bad" style="color:#C0392B;font-weight:700">토지확보 실패 시 사업 중단</td><td class="good">토지매입 완료</td></tr>
+          <tr><td>소유권 취득</td><td>준공과 동시에 취득</td><td class="good">임대기간(10년) 후 취득<br>2년마다 갱신 여부 선택</td></tr>
+          <tr class="compare-badge-row"><td>사업승인 현황</td><td>95% 이상 토지소유권 확보 + 조합설립인가 필요</td><td class="good">2021.03 토지매입완료 · 2021.12 사업계획승인 · 2025.06 사업계획변경승인 완료</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- 일반분양 비교 -->
+    <div class="compare-panel fade-in" id="cmp-general">
+      <table class="compare-table">
+        <thead>
+          <tr><th>구 분</th><th>일반분양 아파트</th><th>분양전환형 장기전세 (라포르테)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>소유권 취득 선택</td><td class="bad">계약 체결 후 취소 불가</td><td class="good">계약 해지 가능 (전세계약 및 분양전환 여부 선택 가능)</td></tr>
+          <tr><td>자격조건</td><td class="bad">청약통장 필요 (1순위, 2순위, 재당첨 제한 등)</td><td class="good">청약 통장 없이 누구나 가능</td></tr>
+          <tr><td>비용절감</td><td class="bad">취득세(1~3%), 재산세 매년 납부, 주택담보대출 부담</td><td class="good">취득세·재산세 없음 / 건강보험료 등 준조세 부담 없음</td></tr>
+          <tr><td>대출조건</td><td>주택담보대출 70%</td><td class="good">전세자금대출 80~90%</td></tr>
+          <tr><td>복수계약</td><td class="bad">1인 1세대 (대출규제)</td><td class="good">1인 복수계약 가능 / 다주택자도 신청 가능</td></tr>
+          <tr><td>유동성·투자유연성</td><td>소유권 확보, 매매를 통한 자산 운용</td><td class="good">2년주기 갱신, 10년 후 분양전환 여부 선택 / 임대사업자 동시에 10년 이내에도 소유권 취득 가능</td></tr>
+          <tr><td>투자리스크</td><td class="bad">시세 하락 시 손실 가능</td><td class="good">확정분양가로 집값 상승 NO / 임대보증금반환보증 100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- HUG 전세보증보험 -->
+<section class="sec hug-section" id="hug">
+  <div class="container">
+    <span class="sec-eyebrow">HUG GUARANTEE SYSTEM</span>
+    <h2 class="sec-title fade-in">HUG 전세보증보험 제도</h2>
+    <p class="sec-desc fade-in">주택도시보증공사(HUG) 보증으로 임차인의 전세보증금을 100% 안전하게 보호합니다.</p>
+    <div class="hug-grid">
+      <!-- 흐름도 -->
+      <div class="fade-in">
+        <div class="hug-diagram">
+          <div class="hug-diagram-title">주택도시보증공사 전세보증보험 개요</div>
+          <div class="hug-flow">
+            <div class="hug-party">임차인</div>
+            <div class="hug-arrow">① 전세계약 체결<br>② 보증가입 &amp; 전세보증금 반채권 양도</div>
+            <div class="hug-center"><strong style="color:var(--navy);font-size:18px">🏛 HUG</strong><span>주택도시보증공사</span></div>
+            <div class="hug-arrow">③ 보증가입 사실 및 전세채권 양도통지<br>④ 보증금 미반환 시 전세보증금 지급</div>
+            <div class="hug-party gold">임대인</div>
+          </div>
+        </div>
+      </div>
+      <!-- 보증 조건 표 -->
+      <div class="fade-in">
+        <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:20px">보증기관별 전세자금 보증 조건</h3>
+        <table class="hug-table">
+          <thead>
+            <tr><th>보증기관</th><th>전세보증금</th><th>대출한도</th><th>보증료</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>한국주택금융공사 (HF)</td>
+              <td>수도권 7억원<br>지방 5억원 이하</td>
+              <td>최대 2억 2,200만원<br>(보증금 80% 이내)</td>
+              <td>연 0.02%~0.40%</td>
+            </tr>
+            <tr>
+              <td>주택도시보증공사 (HUG)</td>
+              <td>수도권 7억원<br>지방 5억원 이하</td>
+              <td>최대 4억원<br>(보증금 80% 이내, 단 청년·신혼 90%)</td>
+              <td>연 0.115%~0.154%</td>
+            </tr>
+            <tr>
+              <td>서울보증보험 (SGI)</td>
+              <td>제한 없음</td>
+              <td>최대 5억원<br>(보증금 80% 이내)</td>
+              <td>금융사<br>(대출 금리에 반영)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="hug-note">
+          본 PJT는 장기일반민간임대주택에 해당(10년)으로 <strong>HUG 임대보증 100%</strong> 의무 가입됩니다.<br>
+          전세자금 대출 가능 은행: 국민·신한·농협·우리은행 <strong>80%</strong>, 하나은행 <strong>90%</strong><br>
+          시중은행 4%대, 주택도시기금 1.1~3.3% 적용
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <div class="footer-logo-box"><svg viewBox="0 0 24 24"><path d="M12 2L4 8v14h5v-7h6v7h5V8L12 2z"/></svg></div>
+          <span class="footer-logo-en">Laporté</span>
+        </div>
+        <p class="footer-desc">밀양 라포르테<br>경남 밀양시 내이동 218-5번지 일원<br>확정분양형 장기일반민간임대주택 · 총 536세대</p>
+      </div>
+      <div class="footer-contact">
+        <div>대표번호</div>
+        <div><strong>055-353-8883</strong></div>
+        <div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,.25)">운영시간: 평일·주말 10:00 ~ 18:00</div>
+      </div>
+    </div>
+    <p class="footer-disclaimer">본 홈페이지의 모든 내용은 이해를 돕기 위한 것으로, 인허가 과정에서 변경될 수 있습니다. 본 자료는 교육 및 안내 목적으로 제작되었으며 실제와 다를 수 있습니다. 정확한 사업 내용은 공급 계약서 및 관련 서류를 반드시 확인하시기 바랍니다. · 사업시행: ㈜아라D&C · 시공예정: ㈜건영</p>
+    <div class="footer-bottom">© 2026 밀양 라포르테 주택 홍보관. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- MOBILE BOTTOM CTA -->
+<div class="mobile-cta-bar">
+  <a href="sms:000000000" class="mobile-cta-btn sms">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
+    문자 상담
+  </a>
+  <a href="tel:0000000" class="mobile-cta-btn tel">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    전화 상담
+  </a>
+</div>
+
+<script>
+/* Header scroll */
+const hdr = document.getElementById('header');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 60), {passive:true});
+
+/* Mobile nav */
+const mBtn = document.getElementById('mobileMenuBtn');
+const mNav = document.getElementById('mobileNav');
+const mOvl = document.getElementById('navOverlay');
+const mCls = document.getElementById('mobileNavClose');
+const open  = () => { mNav.classList.add('open'); mOvl.classList.add('show'); document.body.style.overflow='hidden'; };
+const close = () => { mNav.classList.remove('open'); mOvl.classList.remove('show'); document.body.style.overflow=''; };
+mBtn?.addEventListener('click', open);
+mCls?.addEventListener('click', close);
+mOvl?.addEventListener('click', close);
+document.querySelectorAll('.mnl').forEach(a => a.addEventListener('click', close));
+
+/* Scroll animation */
+const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+/* Plan tabs */
+document.querySelectorAll('.plan-tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.plan-tab').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.plan-panel').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById('plan-' + t.dataset.tab)?.classList.add('active');
+}));
+
+/* Community tabs */
+document.querySelectorAll('.comm-tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.comm-tab').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.comm-panel').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById('comm-' + t.dataset.comm)?.classList.add('active');
+}));
+
+/* Compare tabs */
+document.querySelectorAll('.compare-tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.compare-tab').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.compare-panel').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById('cmp-' + t.dataset.cmp)?.classList.add('active');
+}));
+
+/* Privacy */
+document.getElementById('privacyToggle')?.addEventListener('click', e => {
+  e.preventDefault();
+  const box = document.getElementById('privacyBox');
+  const btn = document.getElementById('privacyToggle');
+  const o = box.classList.toggle('open');
+  btn.textContent = o ? '내용 닫기 ▴' : '내용 보기 ▾';
+});
+document.getElementById('privacyAgree')?.addEventListener('change', () => {
+  document.getElementById('privacyError').style.display = 'none';
+});
+
+/* Form submit */
+const form = document.getElementById('contactForm');
+const fBox = document.getElementById('formBox');
+const fOk  = document.getElementById('formSuccess');
+const sBtn = document.getElementById('submitBtn');
+
+form?.addEventListener('submit', async e => {
+  e.preventDefault();
+  const name   = document.getElementById('from_name').value.trim();
+  const phone  = document.getElementById('phone').value.trim();
+  const agreed = document.getElementById('privacyAgree').checked;
+  if (!name || !phone) { alert('성함과 연락처는 필수 입력 항목입니다.'); return; }
+  if (!agreed) {
+    const err = document.getElementById('privacyError');
+    err.style.display = 'block';
+    err.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  sBtn.disabled = true; sBtn.textContent = '전송 중...';
+  const payload = {
+    from_name: name, phone,
+    unit_type: document.getElementById('unit_type').value,
+    region:    document.getElementById('region').value,
+    message:   document.getElementById('message').value.trim() || '없음'
+  };
+  try {
+    const res  = await fetch('https://milyang-laporte-api.vercel.app/api/contact', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (data.success) { fBox.style.display='none'; fOk.style.display='block'; }
+    else throw new Error(data.error || '전송 실패');
+  } catch(err) {
+    alert('전송 중 오류가 발생했습니다.\n전화 상담으로 연락 주세요.\n(' + err.message + ')');
+    sBtn.disabled = false; sBtn.textContent = '관심 등록 신청하기';
+  }
+});
+</script>
+</body>
+</html>
